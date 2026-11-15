@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cqgibs2lsh6nt"]
+
+[ext_resource type="Script" uid="uid://82l1c27xikiy" path="res://character_body_3d.gd" id="1_s1oj5"]
+[ext_resource type="ArrayMesh" uid="uid://bh1y2q0w3gdkv" path="res://tree 2/pink thang (1)/tinker.obj" id="2_s1oj5"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_s86lu"]
+
+[node name="Node3D" type="Node3D" unique_id=1338550759]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1225952237 groups=["player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4236155, -0.08843553)
+script = ExtResource("1_s1oj5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=758630324]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.12329292)
+shape = SubResource("SphereShape3D_s86lu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D/CollisionShape3D" unique_id=320504738]
+transform = Transform3D(0.054272857, 0, 0, 0, 0.0001505072, 0.054303497, 0, -0.054303497, 0.0001505072, 0.1672396, 0.02666974, -0.1327286)
+mesh = ExtResource("2_s1oj5")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/CollisionShape3D" unique_id=370724439]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.8196857, 0, 1.9278584, 4.818667)
+fov = 100.0
